@@ -1,0 +1,74 @@
+body {
+	margin: 2em auto;
+	text-align: center;
+	color: #434343;
+	font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h1, p {
+	background: white;
+}
+
+.btn {
+	float: left;
+    height: 3em;
+	width: 3em;
+    font-size: 3em;
+	color: #fff;
+	background-color: #333;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	border-width: 1px;
+	outline: none;
+	display: inline-block;
+
+}
+
+#markSelect {
+	margin: 2em auto;
+	width: 30em;
+	height: 10em;
+}
+
+#markSelect .btn {
+	margin: 0 1em;
+}
+
+#container {
+	display: none;
+	width: 27em;
+	height: 27em;
+	margin: 2em auto;
+	-webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+    -moz-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.32);
+}
+
+.red {
+	color: #434343;
+	background-color: #ccc;
+}
+
+@media (max-width: 480px) {
+.btn {
+	height: 2em;
+	width: 2em;
+}
+#container {
+	width: 18em;
+	height: 18em;
+}
+#markSelect {
+	width: 18em;
+	height: 6em;
+}
+#markSelect .btn {
+	margin: 0 0.5em;
+}
+
+}

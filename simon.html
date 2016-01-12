@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Simon</title>
+	<link href="css/simon.css" rel="stylesheet">
+</head>
+<body>
+<h1>Simon</h1>
+<div id="bopits">
+  <button id="btn0"></button>
+  <button id="btn1"></button>
+  <button id="btn2"></button>
+  <button id="btn3"></button>
+</div><!-- end bopits -->
+<div id="switch-bunch">
+  <span>play
+  	<div>
+  		<input id="power" class="cool-toggle" type="checkbox">
+  		<label for="power"></label>
+  	</div>
+  </span>
+  <span>strict
+  <div>
+   	<input id="strict" class="cool-toggle" type="checkbox">
+ 	  <label for="strict"></label>
+ 	</div>
+  </span>
+  <span>high
+  	<div id="high">0</div>
+  </span>
+  <span>score
+  	<div id="score">0</div>
+  </span>
+</div><!-- end switch bunch -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/simon.js"></script>
+</body>
+</html>

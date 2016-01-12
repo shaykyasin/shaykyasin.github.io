@@ -1,0 +1,112 @@
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  margin: 0 auto;
+  width: 80vw;
+}
+
+.boxit {
+  padding-top: 20vh;
+  color: #ddd;
+  text-align:  center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  margin: 20px;
+  padding: 8px 20px;
+  background: transparent;
+  color: #ddd;
+  font-size: 1.2em;
+  border-radius: 8px;
+  outline: none;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  cursor: pointer;
+}
+
+.btn:active {
+  background: #fff;
+  color: #000;
+}
+
+.joke {
+  margin-top: 30vh;
+  font-size: 22px;
+}
+
+#twbird {
+  height: 1.3em;
+  margin-bottom: -0.3em;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 350%;
+    top: -120%;
+    left: -15%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/cn.jpg') center center / cover no-repeat;
+    bottom: -2%
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+
+.boxit {
+  padding-top: 10vh;
+}
+
+.btn {
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px 16px;
+}
+
+.joke {
+  margin-top: 30vh;
+  font-size: 18px;
+}
+}

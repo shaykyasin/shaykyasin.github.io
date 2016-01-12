@@ -1,0 +1,92 @@
+body {
+	font-family: "Avenir", sans;
+	font-size: 16px;
+	background: #ddd;
+	text-align: center;
+}
+
+img.logo {
+	height: 200px;
+	border-radius: 50%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.appbox {
+	margin: 2vh 8vw;
+}
+
+#header, #userContainer {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;	
+	justify-content: space-around;
+}
+
+.tab, #searchInput {
+	font-family: inherit;
+	font-size: 0.8em;
+   border: solid 2px #334D5C;
+   -webkit-border-radius: 30px;
+      -moz-border-radius: 30px;
+           border-radius: 30px;
+   padding: 10px;
+   margin: 10px 20px;
+   display: inline-block;
+   text-align: center;
+   color: rgba(0,0,0,1);
+   text-transform: uppercase;
+   background: inherit;
+   flex-grow: 1;
+}
+.activeTab {
+	background: #334D5C;
+	color: white;
+}
+#searchInput {
+	background: #eee;
+}
+.tab:hover, #searchInput:hover {
+  transform:scale(1.1);
+  transition: 0.2s;
+}
+
+.unit {
+	background: #DF5A49;
+	height: 310px;
+	width: 300px;
+	margin: 20px 20px;
+	padding: 0;
+    -webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+}
+.unit:hover {
+  transform:scale(1.05);
+  transition: 0.2s;
+}
+.online {
+	background: #C1CE96;
+}
+
+.user, .subtext {
+	background: #334D5C;
+	color: #fff;
+	width: 100%;
+	margin: 0;
+}
+
+.user {
+	height: 40px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	font-size: 1.5em;
+}
+.subtext{
+	height: 30px;
+	margin-top: 10px;
+	font-size: 1.15em;
+	padding-top: 10px;
+}

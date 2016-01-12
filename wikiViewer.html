@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Wikipedia Search</title>
+	<link href="css/wikiViewer.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<body ng-app="wiki-viewer" ng-controller="MainController as mCtrl" ng-click="mCtrl.showAC = false">
+	<div id="appbox">
+		<img id="logo" src="https://upload.wikimedia.org/wikipedia/en/8/80/Wikipedia-logo-v2.svg" alt="Wikipedia"/>
+		<a id="random" href="https://en.wikipedia.org/wiki/Special:Random">Random</a>
+		<form ng-submit="mCtrl.searchAll(searchInput)">
+			<input type="text" ng-model="searchInput" ng-change="mCtrl.changed(searchInput)" id="searchInput" placeholder="Search" autocomplete="off" />
+		</form>
+		<div ng-show="mCtrl.showAC" id="popover">
+			<div class="dropdown" ng-repeat="suggest in mCtrl.datalist" ng-click="mCtrl.searchTitle(suggest)">{{suggest}}</div>
+		</div>
+		<a ng-repeat="newsItem in mCtrl.pages" href="{{newsItem.page}}" target="_blank">
+			<div class="unit">
+				<span class="contentArea">
+					{{newsItem.title}}<br/>
+					<span class="info">{{newsItem.extract}}</span>
+				</span>
+			</div>
+		</a>
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/wikiViewer.js"></script>
+</body>
+</html>

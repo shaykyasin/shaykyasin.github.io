@@ -1,0 +1,22 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>TicTacToe</title>
+	<link href="css/ttt.css" rel="stylesheet">
+</head>
+<body ng-app="Tictactoe" ng-controller="MainController as mCtrl">
+	<h1>TicTacToe</h1>
+	<p>You can't win, but you can <em>tie!</em></p>
+	<div id="markSelect">
+		<button class="btn" ng-click="mCtrl.selecMark('╳')">╳</button>
+		<button class="btn" ng-click="mCtrl.selecMark('◯')">◯</button>
+	</div>
+	<div id="container">
+			<button class="btn" ng-repeat="box in mCtrl.game track by $index" ng-click="mCtrl.userSelect($index)" ng-class="{red: mCtrl.shouldPulse($index)}">{{box}}</button>
+	</div>
+	<p id="msg">{{mCtrl.msg}}</p>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/ttt.js"></script>
+</body>
+</html>

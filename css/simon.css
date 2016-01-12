@@ -1,0 +1,130 @@
+body {
+  max-width: 45em;
+  margin: 2em auto;
+  background: #ddd;
+  text-align: center;
+  color: #434343;
+  font-family: sans-serif;
+}
+
+#bopits, #switch-bunch {
+  margin: 3em;
+  width: 40em;
+  height: 10em;
+  box-shadow : 0 1em 2em rgba(0,0,0,0.3);
+  border-radius: 0.4em;
+  overflow: hidden;
+}
+
+#switch-bunch > span, #bopits > button {
+  outline: 0;
+  border: 0;
+  width: 25%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#bopits > button {
+  cursor: pointer;
+}
+
+#btn0 {
+  background: #AEEE00;
+}
+
+#btn1 {
+  background: #FF358B;
+}
+
+#btn2 {
+  background: #333333;
+}
+
+#btn3 {
+  background: #01B0F0;
+}
+
+.glow {
+  opacity: 0.85;
+  -webkit-box-shadow: inset 0px 0px 2em 1em rgba(0,0,0,0.44);
+  -moz-box-shadow: inset 0px 0px 2em 1em rgba(0,0,0,0.44);
+  box-shadow: inset 0px 0px 2em 1em rgba(0,0,0,0.44);
+}
+
+#switch-bunch > span {
+  background: #FFF;
+  padding-top: 3em;
+  text-transform: uppercase;
+}
+
+#switch-bunch > span > div {
+  padding-top: 2em;
+}
+/*CSS Toggles*/
+input[type="checkbox"]:not(:checked), 
+input[type="checkbox"]:checked {
+  position: absolute;
+  opacity: 0;
+}
+input[type="checkbox"] + label {
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 999px;
+  margin: -0.5em auto;
+  padding-top: 1em;
+  background: #DDDDDD;
+  overflow: hidden;
+  transition-duration: .4s;
+  transition-property: padding, height;
+  display: block;
+}
+
+input[type="checkbox"]:checked + label {
+  height: 1.4em;
+  padding-top: 0;
+  padding-bottom: 1em;
+  background-color: #97CD74;
+}
+
+input[type="checkbox"] + label:before {
+  content: '';
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin: 0.2em;
+  border-radius: inherit;
+  background: white;
+}
+
+input[type="checkbox"]:active + label,
+input[type="checkbox"]:focus + label {
+  box-shadow: 0 0 .3em 1px lightgray, 
+                0 1px 1px hsla(0,0%,100%,.8);
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 2em auto;
+    width: 90vw;
+  }
+  #bopits, #switch-bunch {
+    margin: 2em 0;
+    width: 100%;
+    height: 80vw;
+  }
+  #switch-bunch {
+    height: 7em;
+  }
+  #bopits > button {
+    width: 50%;
+    height: 50%;
+  }
+  #switch-bunch > span {
+    padding: 1.5em 0;
+  }
+  #switch-bunch > span > div {
+    padding: 1.5em 0;
+  }
+}

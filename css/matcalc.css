@@ -1,0 +1,87 @@
+* {
+	border-style: none;
+	border-width: 1px;
+}
+
+body {
+	background: #434343;
+}
+
+#display {
+	margin: 10px auto;
+	height: 40px;
+	font-size: 24px;
+	text-align: right;
+	overflow: auto;
+	padding-right: 10px;
+}
+
+#answer {
+	margin: 0;
+	padding: 0 0 0 10px;
+	text-align: right;
+	font-size: 60px;
+	width: 330px;
+	height: 100%;
+	background: transparent;
+}
+
+.answerbox {
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+#bs {
+	margin: 0 0 0 0;
+	padding: 0;
+	height: 70%;
+	width: 60px;
+	background:url('../img/backspace.png') 40% 70% no-repeat;
+}
+
+#calc {
+	padding: 0;
+	margin-top: 20px;
+	height: 540px;
+	width: 393px;
+	font-family: 'Roboto', sans;
+	font-weight: 300;
+	font-size: 26px;
+	background: #fff;			
+}
+
+#button-container {
+	margin: 0;
+	padding: 0;
+}
+
+#button-container > div > button:last-child {
+	background-color: #636363;
+  	box-shadow: inset 20px 0px 20px -20px #000,
+  		inset -20px 0px 20px -20px #000;
+}
+
+#button-container > div:first-child > button {
+	box-shadow: inset 0px 20px 20px -20px #000;
+}
+
+#button-container > div:first-child > button:last-child {
+ 	box-shadow: inset 20px 20px 20px -20px #000,
+ 		inset -20px 0px 20px -20px #000;
+}
+
+#button-container > div:last-child > button:last-child {
+ 	box-shadow: inset 20px -20px 20px -20px #000,
+ 		inset -20px 0px 20px -20px #000;
+}
+
+button {
+	margin: -4px;
+	height: 100px;
+	width: 100px;
+	background-color: #434343;
+	color: #fff;
+	outline: none;
+}

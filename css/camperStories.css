@@ -1,0 +1,88 @@
+body {
+	font-family: "Molengo", sans;
+	font-size: 1em;
+	text-shadow: 0px 1px rgba(0,0,0,0.3);
+	background: #ECEBF0;
+	margin: 0;
+	padding: 0 8vw;
+}
+
+#appbox {
+	margin: 20px auto;
+	flex-direction: column;
+	max-width: 880px;
+}
+#header {
+	text-align: center;
+	text-shadow: none;
+}
+#searchInput {
+	font-family: inherit;
+	font-size: 0.8em;
+	border: solid 2px #334D5C;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	padding: 10px 0;
+	margin: 10px 0;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	background: inherit;
+	width: 100%;
+	letter-spacing: 5;
+}
+#searchInput:hover {
+	transform:scale(1.1);
+	transition: 0.2s;
+}
+
+.unit {
+	overflow: hidden;
+	background: #687D77;
+	height: auto;
+	min-height: 60px;
+	margin: 20px 0;
+	padding: 10px 20px;
+	-webkit-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+	width: 60px;
+	float: left;
+	margin-right: 20px;
+	border-radius: 50%;
+}
+
+a {
+	text-decoration: none;
+	color: #ECEBF0;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.contentArea {
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+
+.info {
+	font-size: 0.8em;
+	color: #D5D4D9;
+}
+
+@media (max-width: 480px) {
+	.logo {
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+	}
+
+	.unit {
+		margin: 20px, 0;
+	}
+}

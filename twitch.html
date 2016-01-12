@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Twitch api</title>
+	<link href="css/twitch.css" rel="stylesheet">
+</head>
+<body ng-app="twitch-status">
+	<div class="appbox" ng-controller="TabController as tabs">
+	<div id="header">
+		<button class="tab" ng-repeat="tabname in tabs.tabList" ng-class="{activeTab: tabs.isMode(tabname)}" ng-click="tabs.setMode(tabname)" onclick="blur(this)">{{tabname}}</button>
+		<input type="text" ng-model="searchInput" id="searchInput" placeholder="Search" />
+	</div>
+	<div id="userContainer">
+			<a class="unit" ng-repeat="user in tabs.currentList | filter:searchInput" href="http://www.twitch.tv/{{tabs.userInfo[user].data.display_name}}" ng-class="{online: tabs.streamInfo[user].data.stream}">
+				<div class="user">{{tabs.userInfo[user].data.display_name}}</div>
+				<img class="logo" src="{{tabs.userInfo[user].data.logo}}" alt="{{user}}'s logo"/>
+				<div class="subtext">{{tabs.streamInfo[user].data.stream.channel.status.substr(0,25).concat("...") || "Offline"}}</div>
+ 			</a>
+ 	</div>
+	</div>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/twitch.js"></script>
+</body>
+</html>
