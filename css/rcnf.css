@@ -1,14 +1,17 @@
 html, body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  margin: 0 auto;
-  width: 80vw;
+  color: #ddd;
+  margin: 0;
+  padding: 0;
+  text-align:  center;
 }
 
-.boxit {
+.container {
   padding-top: 20vh;
-  color: #ddd;
-  text-align:  center;
+  margin: 0 auto;
+  border-color: red;
+  width: 80vw;
 }
 
 a {
@@ -20,8 +23,8 @@ a {
   margin: 20px;
   padding: 8px 20px;
   background: transparent;
-  color: #ddd;
   font-size: 1.2em;
+  color: #ddd;
   border-radius: 8px;
   outline: none;
   border-width: 2px;
@@ -31,7 +34,7 @@ a {
 }
 
 .btn:active {
-  background: #fff;
+  background: #ddd;
   color: #000;
 }
 
@@ -95,18 +98,18 @@ a {
     display: none;
   }
 
-.boxit {
-  padding-top: 10vh;
-}
+  .container {
+    width: 90vw;
+    padding-top: 0;
+  }
 
-.btn {
-  font-size: 16px;
-  margin: 10px;
-  padding: 10px 16px;
-}
+  .btn {
+    font-size: 16px;
+    margin: 10px;
+    padding: 10px 16px;
+  }
 
-.joke {
-  margin-top: 30vh;
-  font-size: 18px;
-}
+  .joke {
+    font-size: 18px;
+  }
 }

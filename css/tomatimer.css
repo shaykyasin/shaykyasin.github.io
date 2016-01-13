@@ -98,10 +98,10 @@ h1 {
 
 @media(max-width:480px) {
   .container {
-    padding-top: 3vh;
+    padding-top: 0;
   }
   h1 {
-    margin: 30px 0;
+    margin: 10px 0;
   }
   .inline {
     padding: 0 5px;
