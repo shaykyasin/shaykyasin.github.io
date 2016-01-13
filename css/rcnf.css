@@ -1,5 +1,6 @@
 html, body {
   font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 2px black;
   font-weight: 400;
   color: #ddd;
   margin: 0;
@@ -20,6 +21,7 @@ a {
 
 .btn {
   font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 2px black;
   margin: 20px;
   padding: 8px 20px;
   background: transparent;
