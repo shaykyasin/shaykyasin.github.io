@@ -28,10 +28,18 @@ body {
 	cursor: pointer;
 }
 
+#weather {
+	text-transform: capitalize;
+}
+
 @media (max-device-width: 480px) {
 	#app {
 		width: 94%;
+		font-size: 2em;
 		padding: 40px 0;
 		line-height: 1.5;
+	}
+	#icon img {
+		height: 1em;
 	}
 }

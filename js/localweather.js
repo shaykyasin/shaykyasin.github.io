@@ -78,7 +78,7 @@
 			$('body').fadeOut(1000, function(){
 				$("#location").text(json.name);
 				$("#temp").text(setTemp(metric, temp));
-				$("#weather").text(weather.main);
+				$("#weather").text(weather.description);
 				$("#icon").html("<img src=\"" + img + "\"" + " alt=\"" + weather.main + "\">");
 				$('body').css("background", "url\(\'http://codecaraml.appspot.com/img/" + bg[bgId] + ".jpg\') no-repeat fixed").css("background-size", "cover").css("height", "100vh");
 				$('body').fadeIn(1000);												
