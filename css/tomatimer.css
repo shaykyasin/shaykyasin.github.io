@@ -41,7 +41,7 @@ h1 {
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
   font-size: 4em;
-  padding-bottom: 5px;
+  padding: 5px 0;
 }
 
 .small {
@@ -101,7 +101,7 @@ h1 {
     padding-top: 0;
   }
   h1 {
-    margin: 10px 0;
+    margin: 5px 0;
   }
   .inline {
     padding: 0 5px;

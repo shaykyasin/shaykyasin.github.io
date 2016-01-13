@@ -110,6 +110,7 @@ a {
   }
 
   .joke {
+    margin-top: 35vh;
     font-size: 18px;
   }
 }
