@@ -21,10 +21,10 @@ a {
 
 .btn {
   font-family: 'Montserrat', sans-serif;
-  text-shadow: 0 2px 2px black;
+  text-shadow: none;
   margin: 20px;
   padding: 8px 20px;
-  background: transparent;
+  background: rgba(80,80,80,0.4);
   font-size: 1.2em;
   color: #fff;
   border-radius: 8px;
@@ -109,7 +109,6 @@ a {
     font-size: 16px;
     margin: 10px;
     padding: 10px 16px;
-    background: rgba(80,80,80,0.7);
   }
 
   .joke {

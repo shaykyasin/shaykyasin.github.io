@@ -1,68 +1,71 @@
 
 $( document ).ready(function() {
 
-var start = Date.now()
-  , running = false
-  , pomo = 1500
-  , doro = 300
-  , pm = true
-  , runner = null
-  , audioElement = document.createElement('audio');
+var start = Date.now();
+var timerOn = false;
+var sessionLength = 1500;
+var breakLength = 300;
+var sessionRunning = true; // false denotes Break is running
+var runner = null; // model
+var audioElement = document.createElement('audio');
 
-  audioElement.setAttribute('src', '../sound/Ship_Bell.mp3');
+audioElement.setAttribute('src', '../sound/Ship_Bell.mp3');
 
-  function init() {
-  if(pm) {
-    tout = pomo;
+function init() {
+  if(sessionRunning) {
+    tout = sessionLength;
   }
   else {
-    tout = doro;
+    tout = breakLength;
   }
   temp = tout;
+  refreshView(formatTime(temp), "0%");
 }
 
 init();
 
+// logic
 $("#toggle").click(function() {
-  if(!running) {
+  if(!timerOn) {
     start = Date.now();
-    running = true;
+    timerOn = true;
     runner = setInterval(function(){
       temp = tout - Math.round((Date.now() - start)/1000);
       if( temp < 1 ) {
         audioElement.play();
-        pm = !pm;
+        sessionRunning = !sessionRunning;
         init();
         start = Date.now();
       }
     }, 200);
    } else {
-    running = false;
+    timerOn = false;
     tout = tout - Math.round((Date.now() - start)/1000);
     clearInterval(runner);
   }
 });
 
+// controllers
 $("#moreSess").click(function() {
-  pomo += 60;
+  sessionLength += 60;
   stopUpdate(runner);
 });
 
 $("#lessSess").click(function() {
-  if ( pomo > 60 ) {
-    pomo -= 60;
+  if ( sessionLength > 60 ) {
+    sessionLength -= 60;
     stopUpdate(runner);
   }
 });
 
 $("#moreBreak").click(function() {
-  doro += 60;
+  breakLength += 60;
   stopUpdate(runner);
 });
 
 $("#lessBreak").click(function() {
-  if ( doro > 60 ) {
-    doro -= 60;
+  if ( breakLength > 60 ) {
+    breakLength -= 60;
     stopUpdate(runner);
   }
 });
@@ -74,27 +77,37 @@ function formatTime(time) {
 
 function stopUpdate(runner) {
   if(runner) {
-    running = false;
+    timerOn = false;
     clearInterval(runner);
   }
   init();
 }
 
 function getfill(temp) {
-  if (pm){
-    return 100 - Math.round(temp*100/pomo) + "%";
+  if (sessionRunning){
+    return 100 - Math.round(temp*100/sessionLength) + "%";
   } else {
-    return 100 - Math.round(temp*100/doro);
+    return 100 - Math.round(temp*100/breakLength) + "%";
   }
 }
 
+function refreshView(timeSec, fill) {
+  $("#time").text(timeSec);
+  $("#mode").text( sessionRunning ? "Session" : "Break" );
+  $("#sess").text(sessionLength/60);
+  $("#break").text(breakLength/60);
+  $("#fill").css("height", fill);  
+}
+
+// view
+var timeSec = temp;
+var fill =  getfill(temp);
 var viewer = setInterval(function(){
-  var fill =  getfill(temp);
-    $("#mode").text( pm ? "Session" : "Break" );
-    $("#time").text(formatTime(temp));
-    $("#sess").text(pomo/60);
-    $("#break").text(doro/60);
-    $("#fill").css("height", fill);
+    if(temp !== timeSec) {
+      timeSec = temp;
+      fill =  getfill(temp);
+      refreshView(formatTime(timeSec), fill);
+    }
   }, 100);
 
 });
