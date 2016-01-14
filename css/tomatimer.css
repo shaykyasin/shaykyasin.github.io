@@ -5,6 +5,7 @@ body {
   height: 100vh;
   min-height: 550px;
   background:url('../img/tomatoes.jpg') no-repeat fixed;
+  overflow: hidden;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
