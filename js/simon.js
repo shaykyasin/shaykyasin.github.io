@@ -11,7 +11,7 @@ var simon = {
 	hiScore:0,
 	};
 
-var tempos = [1600, 1200, 800, 400];
+var tempos = [1200, 1000, 750, 450];
 
  // create web audio api context
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -30,12 +30,12 @@ oscillator.start();
 gainNode.gain.value = 0;
 
 function inputHandler(btn){
-	//console.log(btn);
 	//check if poweron and its users turn
 	if(simon.power && simon.userTurn) {
 		//check if button pressed is correct;
 		if(Number(btn.substr(3)) === simon.seq[simon.curInd]){
 			simon.curInd++;
+			//completed this level?
 			if(simon.curInd === simon.curLvl) {
 				simon.curInd = 0;
 				simon.curLvl++;
@@ -46,6 +46,7 @@ function inputHandler(btn){
 					$('#high').text(simon.hiScore);
 				}
 				//progress to next level
+				simon.userTurn = false;
 				setTimeout(function(){playSequence(simon.seq, 0, simon.curLvl);}, 500);
 			}
 		} else {
@@ -82,16 +83,17 @@ function getSequence() {
 	for(var i=0; i < 20; i++) {
 		sequence.push( Math.round(Math.random()*3) );
 	}
-	//console.log(sequence);
 	return sequence;
 }
 
-function playSequence(seq, ind, untilIndex) {
+function playSequence(seq, ind, untilIndex, tempo) {
 	//setting tempo based on level
-	var tempo = tempos[0];
-	if(untilIndex > 13) tempo = tempos[3];
-	else if(untilIndex > 9) tempo = tempos[2];
-	else if(untilIndex > 5) tempo = tempos[1];
+	if(!tempo) {
+		var tempo = tempos[0];
+		if(untilIndex > 13) tempo = tempos[3];
+		else if(untilIndex > 9) tempo = tempos[2];
+		else if(untilIndex > 5) tempo = tempos[1];
+	}
 	//check for power and level
 	if( simon.power && ind < untilIndex ) {
 		oscillator.frequency.value = simon.freq[seq[ind]];
@@ -100,10 +102,10 @@ function playSequence(seq, ind, untilIndex) {
 		setTimeout(function(){
 			gainNode.gain.value = 0;
 			$('#btn' + seq[ind]).removeClass('glow');
-		}, tempo - tempo/4);//stop playing this time
+		}, tempo - tempo/5);//stop playing at 80% tempo
 
 		setTimeout(function(){
-			playSequence(seq, ind + 1, untilIndex);
+			playSequence(seq, ind + 1, untilIndex, tempo);
 		}, tempo);//play next tone in sequence.
 	} else {
 		simon.userTurn = true;
@@ -131,8 +133,8 @@ $('button').mouseup(function(){
 
 $('#power').click(function(){
 	simon.power = !simon.power;
-	//console.log('power: ' + simon.power);
 	if(simon.power){
+		simon.userTurn = false;
 		playSequence(simon.seq, 0, simon.curLvl);
 	} else {
 		gainNode.gain.value = 0;
