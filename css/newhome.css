@@ -1,6 +1,7 @@
 html, body {
 	width: 100%;
 	height: 100%;
+    background-color: #eee;
 }
 
 .navbar-default {
@@ -216,6 +217,10 @@ h1 {
 #portfolio .portfolio_item {
     border: 1px solid #ccc;
     margin: 10px 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 #portfolio .thumbnail {
@@ -268,19 +273,20 @@ h1 {
     box-shadow: inset 0 0 3px 1px rgba(80,80,80,0.3);
 }
 #contacts div div form input[type="submit"] {
-    background: inherit;
+    background: #FF358B;
     outline: none;
-    border-width: 2px;
     border-color: #FF358B;
-    color: #FF358B;
+    color: white;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
 }
 #contacts div div form input[type="submit"]:hover {
-    background: #FF358B;
-    color: #fff;
-    transition: 0.3s;
+    background: #E31869;
+    transition: 0.2s;
+    -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 #map {
